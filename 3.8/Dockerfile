@@ -1,13 +1,9 @@
 FROM alpine:3.8
 
-MAINTAINER luxmile <luxmile@gmail.com>
+ENV HOME /root
 
 RUN apk update && apk upgrade && \
     apk add bash && \
     rm -rf /var/cache/apk/*
 
-# Set environment variables.
-ENV HOME /root
-
-# Define default command.
 CMD ["/bin/bash"]
