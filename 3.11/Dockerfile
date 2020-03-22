@@ -9,7 +9,7 @@ RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >
     apk add bash tzdata busybox-extras \
         file tree diffutils findutils multitail dos2unix html2text csvtool jq bc \
         net-tools iputils netcat-openbsd mtr socat curl wget wput rsync \
-        logrotate git sqlite3 openldap-client mysql-client && \
+        logrotate git sqlite3 openldap-clients mysql-client && \
     echo 'Asia/Jakarta' > /etc/timezone && \
     rm /etc/localtime && \
     ln -s /usr/share/zoneinfo/Asia/Jakarta /etc/localtime && \
