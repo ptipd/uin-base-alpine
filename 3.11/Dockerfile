@@ -28,13 +28,13 @@ alias s='cd ..'\nalias p='cd -'" > /etc/profile.d/alias.sh && \
     . ~/.bashrc\n\
   fi\n\
 fi" > /root/.profile && \
-    echo -e "[ -z \"$PS1\" ] && return\n\n\
+    echo -e "[ -z \"\$PS1\" ] && return\n\n\
 HISTCONTROL=ignoredups:ignorespace\n\n\
 shopt -s histappend\n\n\
 HISTSIZE=1000\n\
 HISTFILESIZE=2000\n\n\
 shopt -s checkwinsize\n\n\
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '\n\n\
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\\$ '\n\n\
 if [ -f ~/.bash_aliases ]; then\n\
     . ~/.bash_aliases\n\
 fi" > /root/.bashrc && \
