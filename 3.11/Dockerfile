@@ -14,7 +14,7 @@ RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >
     echo 'Asia/Jakarta' > /etc/timezone && \
     rm -f /etc/localtime && \
     ln -s /usr/share/zoneinfo/Asia/Jakarta /etc/localtime && \
-    echo "#\n\
+    echo -e "#\n\
 alias i='free -h'\nalias df='clear; df -h'\nalias du='du -csh'\n\
 alias l='ls -F'\nalias h='ls -lhF'\nalias a='ls -A'\nalias ha='ls -lhFA'\nalias la='ls -FA'\nalias ll='ls -lF'\n\
 alias c='cat'\nalias k='head'\nalias r='more'\nalias g='grep'\nalias v='less'\nalias u='view'\n\
@@ -23,12 +23,12 @@ alias cp='cp -i'\nalias mv='mv -i'\nalias md='mkdir'\nalias rd='rmdir'\nalias rm
 alias n='netstat -tul'\nalias nr='netstat -nr'\nalias nn='netstat -ntul'\n\
 alias s='cd ..'\nalias p='cd -'" > /etc/profile.d/alias.sh && \
     ln -s /etc/profile.d/alias.sh /root/.bash_aliases && \
-    echo "if [ \"$BASH\" ]; then\n\
+    echo -e "if [ \"$BASH\" ]; then\n\
   if [ -f ~/.bashrc ]; then\n\
     . ~/.bashrc\n\
   fi\n\
 fi" > /root/.profile && \
-    echo "[ -z \"$PS1\" ] && return\n\n\
+    echo -e "[ -z \"$PS1\" ] && return\n\n\
 HISTCONTROL=ignoredups:ignorespace\n\n\
 shopt -s histappend\n\n\
 HISTSIZE=1000\n\
